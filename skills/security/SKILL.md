@@ -74,3 +74,7 @@ Client validation is UX; the server is the gate - enforce **both**. Defaults thi
 - **Low** - missing nice-to-haves (password toggle, inline validation), minor hardening.
 
 Report each finding as: **what** (the risk), **where** (file:line), **why it matters**, **fix** (concrete).
+
+## Code maintainability
+
+When writing or reviewing code, also keep it maintainable - this is part of the review, not an afterthought: readable and reviewable by a human later, no file anywhere near 1000+ lines, no duplication (DRY), no dead architecture or spaghetti, and neither over-engineered nor under-structured. The full list is in [`checklist.md`](checklist.md) ("Code maintainability").
