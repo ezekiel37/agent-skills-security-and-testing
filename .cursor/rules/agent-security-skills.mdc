@@ -1,0 +1,33 @@
+---
+description: Security and testing best practices for AI-generated code. Apply when writing, modifying, or reviewing auth, input handling, database, API, Next.js, or test code.
+globs:
+alwaysApply: true
+---
+
+# agent-security-skills (Cursor rules)
+
+Make generated code secure and well-tested by default. Full content lives in the `skills/` folder of this repo - read those files for depth and examples.
+
+## Always
+
+- **Validate on the server.** Client validation is UX only and is bypassable. Re-validate everything in the backend.
+- **Allowlist over blocklist.** Validate against known-good values.
+- **Authorize every endpoint.** Authentication is not authorization. Verify object ownership to prevent IDOR (`/orders/123` must belong to the caller). In Next.js, authorize in a Data Access Layer, not in middleware or layouts.
+- **Never trust input.** Parameterized queries (no string-concat SQL). Encode output (no raw HTML injection). Validate uploads by magic bytes, not extension. Treat Server Action arguments as hostile and re-validate them.
+- **Least privilege.** Scoped DB users, scoped API keys, minimal file/service permissions. Enable Row-Level Security on multi-tenant tables.
+- **Secrets.** None in source, git history, client bundles, or logs. Nothing real behind `NEXT_PUBLIC_`.
+- **API hygiene.** Correct HTTP status codes (200/201/400/401/403/404/409/422/429/5xx), consistent response shape, no internal fields leaked.
+- **Forms.** Username >= 3 chars; password >= 9 chars with upper, lower, number, symbol; confirm-password match; password visibility toggle - all enforced client AND server side.
+
+## Testing
+
+- Test that it works, that it fails gracefully on bad/unexpected input, and that it can't be abused.
+- Cover edge cases: empty/null, boundaries, unicode, dates/timezones, network failure, concurrency, auth expiry, file uploads.
+- Assert HTTP status codes and response schemas, not just bodies.
+- Write a failing test before fixing a bug (regression discipline).
+- Tests are code - review them; they are the last gate to production.
+
+## Reference files
+
+- `skills/security/SKILL.md`, `skills/security/checklist.md`, `skills/security/references/*` (incl. `nextjs.md`)
+- `skills/testing/SKILL.md`, `skills/testing/references/edge-cases.md`, `skills/testing/references/*`

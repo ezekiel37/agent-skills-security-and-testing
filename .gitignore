@@ -1,0 +1,17 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Local secrets (this repo ships none, but keep contributors safe)
+.env
+.env.*
+*.local
+
+# Node / Python (in case examples get run)
+node_modules/
+__pycache__/
+*.pyc
+.venv/
