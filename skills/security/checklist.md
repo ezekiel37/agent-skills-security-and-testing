@@ -131,3 +131,12 @@ Run this against existing code section by section. For each item: confirm it's h
 - [ ] Bypass client validation by hitting the API directly -> server rejects?
 - [ ] Upload a disguised/oversized file -> rejected?
 - [ ] Tamper with JWT claims / hidden fields -> detected?
+
+## Code maintainability (review the code itself, not just security)
+- [ ] **Readable** - clear names, consistent style, obvious control flow; a new dev can follow it
+- [ ] **Maintainable** - a human can revisit, review, and change it later without fear
+- [ ] **No giant files** - nothing anywhere near 1000+ lines; split by responsibility
+- [ ] **No duplication** - shared logic is factored out, not copy-pasted (DRY)
+- [ ] **No dead architecture** - no unused code, dead branches, orphaned modules, or abandoned abstractions
+- [ ] **No spaghetti** - functions do one thing; dependencies flow one direction; no tangled cross-calls
+- [ ] **Right altitude** - not over-engineered for the need, not under-structured for the scale

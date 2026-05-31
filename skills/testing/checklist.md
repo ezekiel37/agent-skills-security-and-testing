@@ -54,3 +54,9 @@ Run this when reviewing tests or a PR. Tests are code - a wrong, missing, or dis
 - [ ] Snapshot test of everything (brittle)
 - [ ] Over-mocking that tests the mock, not the code
 - [ ] Flaky test (passes/fails on re-run) - fix or quarantine, don't ignore
+
+## Code maintainability (the code under test, too)
+- [ ] Readable and maintainable - a human can revisit and review it later
+- [ ] No file anywhere near 1000+ lines; no duplication; no dead architecture or spaghetti
+
+(Full maintainability checklist in [`../security/checklist.md`](../security/checklist.md).)

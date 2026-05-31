@@ -27,6 +27,10 @@ Make generated code secure and well-tested by default. Full content lives in the
 - Write a failing test before fixing a bug (regression discipline).
 - Tests are code - review them; they are the last gate to production.
 
+## Maintainability
+
+- Keep code readable and reviewable by a human later. No file anywhere near 1000+ lines; split by responsibility. No duplication (DRY), no dead code/architecture, no spaghetti. Don't over-engineer or under-structure.
+
 ## Reference files
 
 - `skills/security/SKILL.md`, `skills/security/checklist.md`, `skills/security/references/*` (incl. `nextjs.md`)

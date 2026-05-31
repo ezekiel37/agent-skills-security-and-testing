@@ -34,5 +34,6 @@ This project ships two skills that make AI-generated code **secure** and **well-
 7. **Return correct HTTP status codes** and a consistent response shape.
 8. **Test the unhappy path** - bad data, failures, abuse - not just success. Write a failing test before fixing a bug.
 9. **Tests are code too** - review them; they are the last gate to production.
+10. **Keep code maintainable** - readable and reviewable by a human later; no file anywhere near 1000+ lines; no duplication (DRY); no dead architecture or spaghetti. See `skills/security/checklist.md` ("Code maintainability").
 
 Load the detailed files above for specifics and copy-pasteable examples.
